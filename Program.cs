@@ -24,7 +24,7 @@ foreach (string name in orderIDs)
 
 }*/
 
-Random random = new Random();
+/*Random random = new Random();
 string[] orderIDs = new string[5];
 // Loop through each blank orderID
 for (int i = 0; i < orderIDs.Length; i++)
@@ -40,4 +40,25 @@ for (int i = 0; i < orderIDs.Length; i++)
 foreach (var orderID in orderIDs)
 {
     Console.WriteLine(orderID);
+}*/
+
+string str = "The quick brown fox jumps over the lazy dog.";
+
+
+char[] charMessage = str.ToCharArray();
+Array.Reverse(charMessage);
+
+int letter = 0;
+
+foreach (char i in charMessage) 
+{ 
+  if (i == 'o')
+   { 
+    letter++;
+   } 
 }
+
+string new_message = new String(charMessage);
+
+Console.WriteLine(new_message);
+Console.WriteLine($"'o' appears {letter} times.");
