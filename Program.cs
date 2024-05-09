@@ -1,64 +1,104 @@
-﻿/*int[] inventory = {200,450,700,175,250};
+﻿// initialize variables - graded assignments 
+int currentAssignments = 5;
 
-int sum = 0;
-int bin=0;
+int[] sophiaScores = { 90, 86, 87, 98, 100 };
+int[] andrewScores =  { 92, 89, 81, 96, 90 };
+int[] emmaScores = { 90, 85, 87, 98, 68 };
+int[] loganScores =  { 90, 95, 87, 88, 96 };
 
-foreach (int items in inventory)
+// Student names
+string[] studentNames = {"sophia", "andrew", "emma", "logan"};
+
+//student scores
+int[] studentScores = new int[studentNames.Length];
+
+string currentStudentLetterGrade = "";
+
+//write report header
+Console.WriteLine("Student\t\tGrade\n");
+
+foreach (string name in studentNames)
 {
-  sum+=items;
-    bin++;
-    Console.WriteLine($"Bin {bin} = {items} items (Running total: {sum})");
-};
+    string currentStudent = name;
+    if (currentStudent == "sophia")
+    studentScores = sophiaScores;
 
-Console.WriteLine($"We have {sum} items in inventory.");*/
+    else if (currentStudent == "andrew")
+    studentScores = andrewScores;
 
-/*
-string[] orderIDs = {"B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179"};
+    else if (currentStudent == "emma")
+    studentScores = emmaScores;
 
-foreach (string name in orderIDs)
-{
-  if ( name.StartsWith('B'))
-  {
-    Console.WriteLine($"The name {name} starts with 'B'");
-  }
+    else if (currentStudent == "logan")
+    studentScores = loganScores;
 
-}*/
+    int sumAssignmentScores = 0;
 
-/*Random random = new Random();
-string[] orderIDs = new string[5];
-// Loop through each blank orderID
-for (int i = 0; i < orderIDs.Length; i++)
-{
+    decimal currentStudentGrade = 0;
 
-    int prefixValue = random.Next(65, 70);  
-    string prefix = Convert.ToChar(prefixValue).ToString();
-    string suffix = random.Next(1, 1000).ToString("000");
- 
-    orderIDs[i] = prefix + suffix;
+    foreach (int score in studentScores)
+    {
+    // initialize/reset the sum of scored assignments
+      sumAssignmentScores += score;
+    }
+
+    currentStudentGrade = (decimal)(sumAssignmentScores) / currentAssignments;
+    if (currentStudentGrade >= 97)
+    {
+        currentStudentLetterGrade = "A+";
+    }
+    else if (currentStudentGrade >= 93)
+    {
+        currentStudentLetterGrade = "A";
+    }
+    else if (currentStudentGrade >= 90)
+    {
+        currentStudentLetterGrade = "A-";
+    }
+    else if (currentStudentGrade >= 87)
+    {
+        currentStudentLetterGrade = "B+";
+    }
+    else if (currentStudentGrade >= 83)
+    {
+        currentStudentLetterGrade = "B";
+    }
+    else if (currentStudentGrade >= 80)
+    {
+        currentStudentLetterGrade = "B-";
+    }
+    else if (currentStudentGrade >= 77)
+    {
+        currentStudentLetterGrade = "C+";
+    }
+    else if (currentStudentGrade >= 73)
+    {
+        currentStudentLetterGrade = "C";
+    }
+    else if (currentStudentGrade >= 70)
+    {
+        currentStudentLetterGrade = "C-";
+    }
+    else if (currentStudentGrade >= 67)
+    {
+        currentStudentLetterGrade = "D+";
+    }
+    else if (currentStudentGrade >= 63)
+    {
+        currentStudentLetterGrade = "D";
+    }
+    else if (currentStudentGrade >= 60)
+    {
+        currentStudentLetterGrade = "D-";
+    }
+    else{
+        currentStudentLetterGrade = "F";
+    }
+   
+
+    Console.WriteLine($"{currentStudent}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
 }
 
-foreach (var orderID in orderIDs)
-{
-    Console.WriteLine(orderID);
-}*/
 
-string str = "The quick brown fox jumps over the lazy dog.";
-
-
-char[] charMessage = str.ToCharArray();
-Array.Reverse(charMessage);
-
-int letter = 0;
-
-foreach (char i in charMessage) 
-{ 
-  if (i == 'o')
-   { 
-    letter++;
-   } 
-}
-
-string new_message = new String(charMessage);
-
-Console.WriteLine(new_message);
-Console.WriteLine($"'o' appears {letter} times.");
+Console.WriteLine("Press the Enter key to continue");
+Console.ReadLine();
