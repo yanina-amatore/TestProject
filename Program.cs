@@ -22,7 +22,7 @@ Console.WriteLine(pangram.Contains("cow"));*/
 
 // These two lines of code will create the same output
 
-string pangram = "The quick brown fox jumps over the lazy dog.";
+/*string pangram = "The quick brown fox jumps over the lazy dog.";
 
 Console.WriteLine(pangram.Contains("fox") == false);
 Console.WriteLine(!pangram.Contains("fox"));
@@ -30,4 +30,10 @@ Console.WriteLine(!pangram.Contains("fox"));
 
 int saleAmount = 99;
 int discount = saleAmount > 1000 ? 100 : 50;
-Console.WriteLine($"Discount: {discount}");
+Console.WriteLine($"Discount: {discount}");*/
+
+Random coin = new Random();
+
+int flip = coin.Next(0, 2);
+
+Console.WriteLine(flip == 0 ? "Heads" : "Tails");
