@@ -1,52 +1,26 @@
 ﻿
-/*for (int i = 0; i < 10; i++) 
+Random random = new Random();
+
+int current = random.Next(1, 11);
+
+/*do{
+
+  current =  random.Next(1, 11);
+  Console.WriteLine( current );
+} while (current !=7); 
+
+while (current >= 3)
 {
-  Console.WriteLine(i);
-      if (i == 7) break;
-}; */
+    Console.WriteLine(current);
+    current = random.Next(1, 11);
+}
+Console.WriteLine($"Last number: {current}"); */
 
-
-/*string[] names = { "Alex", "Eddie", "David", "Michael" };
-
-for (int i = 0 ; i <= names.Length - 1; i++)
+do
 {
-    Console.WriteLine(names[i]);
-};
+    current = random.Next(1, 11);
 
-foreach (string name in names){
-  if( name == "David" ) name = "Sammy";
-};
+    if (current >= 8) continue;
 
-for ( int i = 0; i <= names.Length -1; i++){
-  if( names[i] == "David" ) names[i] = "Sammy";
-  Console.WriteLine(names[i]);
-}; */
-
-/* FizzBuzz challenge
-
-- Output values from 1 to 100, one number per line, inside the code block of an iteration statement.
-- When the current value is divisible by 3, print the term Fizz next to the number.
-- When the current value is divisible by 5, print the term Buzz next to the number.
-- When the current value is divisible by both 3 and 5, print the term FizzBuzz next to the number.
-
-*/
-for (int i = 1; i <= 100; i++)
-{
-  if (i % 3 == 0 && i % 5 == 0)
-  {
-    Console.WriteLine(i + " FizzBuzz");
-  }
-  else if (i % 3 == 0)
-  {
-    Console.WriteLine(i + " Fizz");
-  }
-  else if (i % 5 == 0)
-  {
-    Console.WriteLine(i + " Buzz");
-  }
-  else
-  {
-    Console.WriteLine(i);
-  }
-};
-  
+    Console.WriteLine(current);
+} while (current != 7);
