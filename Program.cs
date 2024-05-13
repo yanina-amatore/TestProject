@@ -1,50 +1,30 @@
-﻿// turn off copilot mode
-// turn off copilot mode
+﻿string? readResult;
+bool validEntry = false;
 
- /*int heroHealth = 10 ;
-int monsterHealth = 10 ;
+int numericValue = 0;
+bool validNumber = false;
 
-Random diceAttacl = new Random();
+//validNumber = int.TryParse(readResult, out numericValue);
 
-
-do
-{
-  int  diceRoll = diceAttack.Next(1, 11);
-  monsterHealth -= diceRoll;
-  if (monsterHealth >0){
-    Console.WriteLine($"Monster was damaged and lost {diceRoll} health and now has {monsterHealth} health.") ;
-    int rollAgain = diceAttack.Next(1, 11);
-    heroHealth -= rollAgain;
-    if (heroHealth >0){
-      Console.WriteLine($"Hero was damaged and lost {rollAgain} health and now has {heroHealth} health.") ;
-    }
-    else{
-      Console.WriteLine($"Hero has been defeated and lost and lost {rollAgain} remaining. Monster Wins!") ;
-      break ;
-    }
-  }else{
-      Console.WriteLine($"Hero wins. Monsters has been defeated. he lost {monsterHealth} remaining");
-    }
-
-} while (monsterHealth >0); */
-
-int hero = 10;
-int monster = 10;
-
-Random dice = new Random();
+Console.WriteLine("Enter a  number between 5-10");
 
 do
 {
-    int roll = dice.Next(1, 11);
-    monster -= roll;
-    Console.WriteLine($"Monster was damaged and lost {roll} health and now has {monster} health.");
+    readResult = Console.ReadLine();    
+    
+    validNumber = int.TryParse(readResult, out numericValue);
 
-    if (monster <= 0) continue;
+    if (readResult != null)
+    {
+        if (numericValue >= 5 && numericValue <=10)
+        {
+          Console.WriteLine($"Your input value ({numericValue}) has been accepted.");
+            validEntry = true;
 
-    roll = dice.Next(1, 11);
-    hero -= roll;
-    Console.WriteLine($"Hero was damaged and lost {roll} health and now has {hero} health.");
-
-} while (hero > 0 && monster > 0);
-
-Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");
+        }
+        else
+        {
+            Console.WriteLine($"Your input ({numericValue}) is invalid, please try again a number between 5-10 .");
+        }
+    }
+} while (validEntry == false);
