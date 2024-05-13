@@ -1,4 +1,6 @@
-﻿string? readResult;
+﻿/* -- PROJECT 1
+
+string? readResult;
 bool validEntry = false;
 
 int numericValue = 0;
@@ -28,3 +30,31 @@ do
         }
     }
 } while (validEntry == false);
+*/
+/* -- PROJECT 2 
+string? readResult;
+bool validEntry = false;
+
+
+Console.WriteLine("Enter your role name (Administrator, Manager, or User)");
+
+do
+{
+   readResult = Console.ReadLine()?.Trim().ToLower();
+  
+    if (readResult != null)
+    {
+      
+        if (readResult == "administrator" || readResult == "manager" || readResult == "user")
+        {
+            Console.WriteLine($"Your role ({readResult}) has been accepted.");
+            validEntry = true;
+        }
+        else
+        {
+            Console.WriteLine($"Your role ({readResult}) is invalid, please try again (Administrator, Manager, or User).");
+        }
+    }
+} while (validEntry == false); */
+
+/* -- PROJECT 2 */
